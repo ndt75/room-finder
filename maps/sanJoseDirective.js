@@ -13,8 +13,8 @@ app.directive("room", function () {
             "<ul class='details'>" +
             "<li><label>Name:</label><span>" + name +"</span></li>" + 
             "<li><label>People:</label><span>" + 4 +"</span></li>" + 
-            "<li><label>Video</label><span>" + "yes" +"</span></li>" +  
-            "<li><label>Times</label><span>" + "yes" +"</span></li>" +  
+            "<li><label>Video</label><span>" + "yes" +"</span></li>" + 
+            "<li><label>White Board</label><span>" + "yes" +"</span></li>" +
             "</ul>" +
             "</div>";
 
