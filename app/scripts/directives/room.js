@@ -9,6 +9,7 @@ angular.module('roomFinderApp').directive("room", function () {
             var shape = $(element);
             var data = JSON.parse(attrs.params);
 
+            debugger;
             var content =
             "<ul class='details'>" +
             "<li><label>Available:</label><span>" + scope.hasAttribute(data.available) +"</span></li>" +
