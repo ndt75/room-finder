@@ -23,7 +23,6 @@ Office.prototype = {
 }
 
 var office = new Office("San Jose");
-
 //8th Floor
 office.addRoom(new Room("penthouse", true, 4, true, true));
 office.addRoom(new Room("bungalow", false, 4, true, true));
@@ -51,7 +50,7 @@ office.addRoom(new Room("arena", false, 4, true, true));
 var moveOffices = {};
 moveOffices[office.name] = office;
 
-app.
+angular.module('roomFinderApp').
     factory('roomService', function ($http) {
         var roomService = function (data) {
             angular.extend(this, data);
