@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="bookmeApp">
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="http://w3resource.com/twitter-bootstrap/twitter-bootstrap-v2/js/bootstrap-tooltip.js"></script>
+    <script src="http://w3resource.com/twitter-bootstrap/twitter-bootstrap-v2/js/bootstrap-popover.js"></script>
+  <script src="ui-bootstrap-tpls-0.9.0.min.js"></script>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="app.css" rel="stylesheet">
+</head>
+<body>
+
+<div ng-controller="sanJoseCtrl">
+
+<!-- <svg width="400" height="110"  >
+   <rect width="400" height="110" stroke="green" stroke-width="4" fill="yellow" data-name="castle" data-available="true" room popover="Castle!" popover-trigger="click" popover-placement="bottom"/>
+</svg> 
+<svg width="400" height="110"  >
+   <rect width="400" height="110" stroke="green" stroke-width="4" fill="yellow" data-name="castle" data-available="false" room popover="Castle!" popover-trigger="mouseenter"/>
+</svg>  -->
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 640 480" style="enable-background:new 0 0 640 480;" xml:space="preserve">
+<g id="Layer_3">
+	
+		<image style="overflow:visible;" width="2100" height="1352" xlink:href="SanJose8.jpg"  transform="matrix(0.3004 0 0 0.3004 2.9553 2.4286)">
+	</image>
+</g>
+<g id="Rooms">
+
+	<!--ROOMS-->
+<polygon room data-name="penthouse" data-available="true" popover="penthouse!" popover-trigger="mouseenter" class="room" points="106.75,240.25 146,278.75 167,249.25 
+		134.75,217.25 	" />
+<polygon room data-name="bungalow" data-available="false" popover="bungalow!" popover-trigger="mouseenter" class="room" points="147,279.75 177.5,298.75 
+		193.75,266.25 167,249.25 	" />
+<polygon room data-name="houseboat" data-available="true" popover="houseboat!" popover-trigger="mouseenter" class="room" points="194.667,266.667 178.333,298.75 
+		212,312.833 223.833,277.75 	" />
+<polygon room data-name="lanai" data-available="false" popover="lanai!" popover-trigger="mouseenter" class="room" points="223.75,277.75 212,312.833 
+	249.75,320.75 254.75,284.75 	" />
+<polygon room data-name="wigwam" data-available="true" popover="wigwam!" popover-trigger="mouseenter" class="room" points="257.5,270.75 249.75,320.75 
+284.25,323.25 284.25,270.75 	" />
+
+
+<polygon room data-name="castle" data-available="true" popover="castle!" popover-trigger="mouseenter" class="room" points="327.5,268.75 327.5,322.25 
+	337.75,322.25 337.75,335 385.75,335 385.75,348 411,348 411,268.75 	" />
+
+<rect room data-name="farmhouse" data-available="true" popover="farmhouse!" popover-trigger="mouseenter" x="550.5" y="224.667" class="room" width="31.833" height="36.833" />
+
+<rect room data-name="adobe" data-available="true" popover="adobe!" popover-trigger="mouseenter" x="550.5" y="100" class="room" width="31.833" height="51.5" />
+</g>
+</svg>
+
+<button popover-placement="top" popover="On the Top!" class="btn btn-default">Top</button>
+<button popover-placement="left" popover="On the Left!" class="btn btn-default">Left</button>
+<button popover-placement="right" popover="On the Right!" class="btn btn-default">Right</button>
+<button popover-placement="bottom" popover="On the Bottom!" class="btn btn-default">Bottom</button>
+
+</div>
+
+<script src="bookmeApp.js"></script>
+<script src="sanJoseCtrl.js"></script>
+<script src="sanJoseDirective.js"></script>
+ 
+</body>
+</html>
