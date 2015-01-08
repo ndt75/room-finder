@@ -21,7 +21,6 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
-  console.log('xx:w');
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -302,7 +301,8 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['*.html', 'views/{,*/}*.html'],
+          src: ['*.html'],
+          //src: ['*.html', 'views/{,*/}*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
