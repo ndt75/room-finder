@@ -36,5 +36,4 @@ angular
   })
     .controller('RoomFinderController', ['$scope', function($scope) {
       $scope.locationSelected = '';
-      console.log('locationSelected', $scope.locationSelected);
     }]);

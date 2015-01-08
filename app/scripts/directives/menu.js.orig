@@ -26,12 +26,18 @@ angular.module('roomFinderApp')
             console.log('success', data, status, headers(), config);
           }).
           error(function(data, status, headers, config) {
+<<<<<<< HEAD
             console.log('error', data, status, headers(), config);
                 var data = roomService.getRemoteDataTest();
-                var rooms = roomService.updateRooms(data);
-                  $scope.updateRooms(rooms);
-                  //$scope.rooms = rooms;
+                var rooms = roomService.updateRoomsTest(data);
 
+                $scope.$apply(function()
+                {
+                    $scope.rooms = rooms;
+                });
+=======
+              console.log('error', data, status, headers(), config);
+>>>>>>> master
           });
         };
 

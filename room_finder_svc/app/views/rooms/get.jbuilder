@@ -1,1 +1,1 @@
-json.rooms @rooms, :name, :available
+json.rooms @rooms, :name, :available, :display_name, :video, :people, :whiteboard

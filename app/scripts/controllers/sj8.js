@@ -15,9 +15,9 @@ angular.module('roomFinderApp')
             'Karma'
         ];
 
-        $scope.rooms = roomService.getRooms("San Jose");
+        $scope.rooms = roomService.getRooms('San Jose');
 
         $scope.hasAttribute = function (value) {
-            return (value) ? "yes" : "no";
+            return (value) ? 'yes' : 'no';
         }
     });
