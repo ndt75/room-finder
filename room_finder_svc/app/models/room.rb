@@ -24,8 +24,12 @@ class Room
 
   def get_room_info(room)
     email = get_email_address(room)
+    name = get_name(room)
     availability = get_availability(email)
-    { name: email, available: !availability }
+    room_attributes = RoomAttributeData.getAttributes(email)
+    base_data = { name: email, display_name: name, available: !availability }
+    base_data.merge!(room_attributes) if room_attributes
+    base_data
   end
 
   def get_email_address(room)
@@ -37,6 +41,17 @@ class Room
     puts "email = #{email}"
 
     email
+  end
+
+  def get_name(room)
+    room_name_data = room[:room][:elems][:id][:elems].find do |data| 
+        data.has_key? :name
+    end
+
+    name = room_name_data[:name][:text]
+    puts "name = #{name}"
+
+    name
   end
 
   def get_availability(email)

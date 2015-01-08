@@ -3,6 +3,7 @@ class RoomsController < ApplicationController
   def get
     room_obj = Room.new
     @rooms = room_obj.get_rooms_data(start: start_time, end: end_time)
+    puts @rooms
   end
 
   def book
