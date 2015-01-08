@@ -19,5 +19,5 @@ angular.module('roomFinderApp')
 
       $scope.hasAttribute = function (value) {
         return (value) ? 'yes' : 'no';
-      }
+      };
   });

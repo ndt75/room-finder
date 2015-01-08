@@ -20,7 +20,7 @@ Office.prototype = {
     getRooms: function () {
         return this.rooms;
     }
-}
+};
 
 var office = new Office('San Jose');
 //8th Floor
