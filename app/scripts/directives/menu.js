@@ -7,7 +7,7 @@
  * # menu
  */
 angular.module('roomFinderApp')
-  .directive('menu', ['$http', function ($http) {
+  .directive('menu', ['$http', 'roomService', function ($http, roomService) {
     return {
       templateUrl: 'views/menu.html',
       restrict: 'EA',
@@ -27,6 +27,13 @@ angular.module('roomFinderApp')
           }).
           error(function(data, status, headers, config) {
             console.log('error', data, status, headers(), config);
+                var data = roomService.getRemoteDataTest();
+                var rooms = roomService.updateRoomsTest(data);
+
+                $scope.$apply(function()
+                {
+                    $scope.rooms = rooms;
+                });
           });
         };
 
