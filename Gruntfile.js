@@ -21,6 +21,7 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  console.log('xx:w');
   // Define the configuration for all the tasks
   grunt.initConfig({
 
