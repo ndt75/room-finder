@@ -1,27 +1,22 @@
-.room
-{
-	stroke: #000000;
-	stroke-width: 2;
-	stroke-miterlimit: 10;
+.room {
+    stroke: #000000;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
 }
 
-.availableA
-{
-	fill: "#EDE6CE";
+.available {
+    fill: "#EDE6CE";
 }
 
-.unavailableA
-{
-	fill: "#F15A22";
+.unavailable {
+    fill: "#F15A22";
 }
 
-.details
-{
-	list-style-type: none;
-	padding: 0;
+.details {
+    list-style-type: none;
+    padding: 0;
 }
 
-.details li span
-{
-	margin-left: 5px;
+.details li span {
+    margin-left: 5px;
 }
