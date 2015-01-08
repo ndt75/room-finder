@@ -21,7 +21,77 @@ Office.prototype = {
     },
     getRooms: function () {
         return this.rooms;
+    },
+    getKey: function(name){
+        var key = ''
+        switch (name) {
+            case 'sanjosepenthouse@move.com':
+                key = 'penthouse';
+                break;
+            case 'sanjosebungalow@move.com':
+                key = 'bungalow';
+                break;
+            case 'CampbellTheHouseboat@move.com':
+                key = 'houseboat';
+                break;
+            case 'CampbellTheWigwam@move.com':
+                key = 'wigwam';
+                break;
+            case 'CampbellTheCastle@move.com':
+                key = 'castle';
+                break;
+            case 'sanjosefarmhouse@move.com':
+                key = 'farmhouse';
+                break;
+            case 'CampbellTheAdobe@move.com':
+                key = 'adobe';
+                break;
+            case 'sanjoseFortress@move.com':
+                key = 'fortress';
+                break;
+            case 'sanjoseigloo@move.com':
+                key = 'igloo';
+                break;
+            case 'sanjosepenthouse@move.com':
+                key = 'mansion';
+                break;
+            case 'sanjosemansion@move.com':
+                key = 'mansion';
+                break;
+            case 'CampbellTheLighthouse@move.com':
+                key = 'lighthouse';
+                break;
+            case 'CampbellTheTepee@move.com':
+                key = 'tepee';
+                break;
+            case 'CampbellTheYurt@move.com':
+                key = 'yurt';
+                break;
+            case 'sanjosecasa@move.com':
+                key = 'casa';
+                break;
+            case 'CMBTreehouse@move.com':
+                key = 'treehouse';
+                break;
+            case 'CampbellTheChalet@move.com':
+                key = 'chalet';
+                break;
+            case 'sanjoseloft@move.com':
+                key = 'loft';
+                break;
+        }
+    },
+    addRooms: function(rooms){
+        var key = ''
+        var room = null;
+
+        for (var r in rooms) {
+            key = this.getKey(r.name)
+            room = new Room(key, r.available, r.video, r.whiteboard, r.name, r.displayName);
+            this.rooms[key = room];
+        }
     }
+
 }
 
 var office = new Office('San Jose');
@@ -30,7 +100,7 @@ var office = new Office('San Jose');
 office.addRoom(new Room('penthouse', true, 4, true, true, 'sanjosepenthouse@move.com'));
 office.addRoom(new Room('bungalow', false, 4, true, true, 'sanjosebungalow@move.com'));
 office.addRoom(new Room('houseboat', true, 4, true, 'CampbellTheHouseboat@move.com'));
-office.addRoom(new Room('lanai', false, 4, true, true));
+//office.addRoom(new Room('lanai', false, 4, true, true));
 office.addRoom(new Room('wigwam', true, 4, true, true, 'CampbellTheWigwam@move.com'));
 office.addRoom(new Room('castle', false, 4, true, true, 'CampbellTheCastle@move.com'));
 office.addRoom(new Room('farmhouse', true, 4, true, true, 'sanjosefarmhouse@move.com'));
