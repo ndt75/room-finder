@@ -58,8 +58,21 @@ body {
     padding: 14px 24px;
   }
 }
+.sj7 a {
+  color: #FFCF5B;
+}
+
+.sj8 a {
+  color: #F15A22;
+}
 
 .menu {
+  margin-bottom: 10px;
+
+  output {
+    display: inline-block;
+  }
+
   input[type="date"] {
     width: 140px;
   }
@@ -67,16 +80,33 @@ body {
     display: inline-block;
     margin-right: 10px;
   }
+
+  .date {
+    width: 100px;
+  }
+
+  .calendar {
+    cursor: pointer;
+  }
 }
 
 .filter {
   input[type="checkbox"],
-  .capacity {
+  .capacity.min {
     margin-left: 20px;
   }
 
   input[type="number"] {
     width: 40px;
+  }
+}
+
+.cta {
+  margin-top: 10px;
+
+  button {
+    color: green;
+    border: solid 1px green;
   }
 }
 
