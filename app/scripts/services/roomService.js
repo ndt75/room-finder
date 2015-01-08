@@ -1,12 +1,13 @@
 'use strict';
 
-var Room = function (displayName, available, people, video, whiteboard, name) {
+var Room = function (key, available, people, video, whiteboard, name, displayName) {
+    this.key = key;
     this.name = name;
     this.available = available;
     this.people = people;
     this.video = video;
     this.whiteboard = whiteboard;
-    this.displayName = displayName;
+    this.displayName = (!displayName)? this.key: displayName;
 }
 
 var Office = function (name) {
@@ -16,7 +17,7 @@ var Office = function (name) {
 
 Office.prototype = {
     addRoom: function (room) {
-        this.rooms[room.displayName] = room;
+        this.rooms[room.key] = room;
     },
     getRooms: function () {
         return this.rooms;

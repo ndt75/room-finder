@@ -23,7 +23,7 @@ angular.module('roomFinderApp').directive("room", function () {
                 content: content,
                 placement: "left",
                 html: true,
-                title: data.name
+                title: data.displayName
             };
 
             shape.popover(options);
