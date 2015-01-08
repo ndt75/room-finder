@@ -4,11 +4,11 @@
     stroke-miterlimit: 10;
 }
 
-.availableA {
+.available {
     fill: "#EDE6CE";
 }
 
-.unavailableA {
+.unavailable {
     fill: "#F15A22";
 }
 

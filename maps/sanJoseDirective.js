@@ -7,14 +7,14 @@ app.directive("room", function () {
         restrict: 'A',
         link: function (scope, element, attrs) {
             var shape = $(element);
-            var attrs = JSON.parse(attrs.params);
+            var data = JSON.parse(attrs.params);
 
             var content =
             "<ul class='details'>" +
-            "<li><label>Available:</label><span>" + scope.hasAttribute(attrs.available) +"</span></li>" + 
-            "<li><label>People:</label><span>" + attrs.people +"</span></li>" + 
-            "<li><label>Video</label><span>" + scope.hasAttribute(attrs.video) +"</span></li>" + 
-            "<li><label>White Board</label><span>" + scope.hasAttribute(attrs.whiteboard) +"</span></li>" +
+            "<li><label>Available:</label><span>" + scope.hasAttribute(data.available) +"</span></li>" +
+            "<li><label>People:</label><span>" + data.people +"</span></li>" +
+            "<li><label>Video</label><span>" + scope.hasAttribute(data.video) +"</span></li>" +
+            "<li><label>White Board</label><span>" + scope.hasAttribute(data.whiteboard) +"</span></li>" +
             "</ul>";
 
             var options = {
@@ -23,12 +23,12 @@ app.directive("room", function () {
                 content: content,
                 placement: "left",
                 html: true,
-                title: attrs.name
+                title: data.name
             };
 
             shape.popover(options);
 
-        	var fill = (attrs.available) ? "#EDE6CE" : "#F15A22";
+        	var fill = (data.available) ? "#EDE6CE" : "#F15A22";
             shape.css("fill", fill);
         }
     };
