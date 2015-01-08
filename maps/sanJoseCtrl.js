@@ -1,10 +1,10 @@
 app.controller("sanJoseCtrl", function($scope) {
-    
+    var rooms = [];
+	rooms["penthouse"] = {
+	    	name: "penthouse", 
+	    	available: false
+	    };
+	$scope.rooms = rooms;
 
-  //   $scope.rooms = [
-  //   {
-  //   	name: "penthouse", points: "106.75,240.25 146,278.75 167,249.25 
-		// 134.75,217.25 	"
-  //   }
-  //   ];
+    console.log(rooms.penthouse.points);
 });

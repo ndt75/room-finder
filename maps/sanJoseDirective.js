@@ -8,10 +8,11 @@ app.directive("room", function () {
         link: function (scope, element, attrs) {
             var shape = $(element);
             var name = shape.data("name");
+            var attrs = JSON.parse(attrs.params);
             var template = 
             "<div>" + 
             "<ul class='details'>" +
-            "<li><label>Name:</label><span>" + name +"</span></li>" + 
+            "<li><label>Name:</label><span>" + attrs.name +"</span></li>" + 
             "<li><label>People:</label><span>" + 4 +"</span></li>" + 
             "<li><label>Video</label><span>" + "yes" +"</span></li>" + 
             "<li><label>White Board</label><span>" + "yes" +"</span></li>" +
