@@ -15,15 +15,10 @@ angular.module('roomFinderApp')
             'Karma'
         ];
 
-        $scope.rooms = roomService.getRooms("San Jose");
+        $scope.refresh = function(){
+            $scope.rooms = roomService.getRooms("San Jose");
+        };
 
-        $scope.hasAttribute = function (value) {
-            return (value) ? "yes" : "no";
-        }
+        $scope.refresh();
 
-        $scope.updateRooms = function(rooms)
-        {
-            $scope.rooms = {};
-            $scope.rooms = rooms;
-        }
     });

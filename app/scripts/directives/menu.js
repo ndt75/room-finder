@@ -29,7 +29,8 @@ angular.module('roomFinderApp')
             console.log('error', data, status, headers(), config);
                 var data = roomService.getRemoteDataTest();
                 var rooms = roomService.updateRooms(data);
-                  $scope.updateRooms(rooms);
+                  $scope.rooms = rooms;
+                  $scope.refresh();
                   //$scope.rooms = rooms;
 
           });

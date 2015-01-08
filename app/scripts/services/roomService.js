@@ -10,6 +10,12 @@ var Room = function (key, available, people, video, whiteboard, name, displayNam
     this.displayName = (!displayName)? this.key: displayName;
 }
 
+Room.prototype = {
+    hasAttribute : function (value) {
+        return (value) ? 'yes' : 'no';
+    }
+}
+
 var Office = function (name) {
     this.rooms = {};
     this.name = name;
