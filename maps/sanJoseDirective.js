@@ -9,23 +9,21 @@ app.directive("room", function () {
             var shape = $(element);
             var attrs = JSON.parse(attrs.params);
 
-            var template = 
-            "<div>" + 
+            var content =
             "<ul class='details'>" +
-            "<li><label>Name:</label><span>" + attrs.name +"</span></li>" + 
             "<li><label>Available:</label><span>" + scope.hasAttribute(attrs.available) +"</span></li>" + 
             "<li><label>People:</label><span>" + attrs.people +"</span></li>" + 
             "<li><label>Video</label><span>" + scope.hasAttribute(attrs.video) +"</span></li>" + 
             "<li><label>White Board</label><span>" + scope.hasAttribute(attrs.whiteboard) +"</span></li>" +
-            "</ul>" +
-            "</div>";
+            "</ul>";
 
             var options = {
                 trigger: "hover",
                 delay: { show: 100, hide: 120},
-                content: template,
+                content: content,
                 placement: "left",
-                html: true
+                html: true,
+                title: attrs.name
             };
 
             shape.popover(options);
