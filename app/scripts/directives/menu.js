@@ -27,7 +27,7 @@ angular.module('roomFinderApp')
                 $scope.findRooms = function () {
                     //console.log('findRooms...', $scope);
 
-                    $http.get('http://api/rooms/get', {
+                    $http.get('http://csdipchack02.sites.homestore.net/api/rooms/get', {
                         params: {
                             date: new Date($scope.date).toLocaleDateString(),
                             stime: $scope.startTime,
@@ -35,14 +35,17 @@ angular.module('roomFinderApp')
                         }
                     }).
                         success(function (data, status, headers, config) {
+                            var rooms = roomService.updateRooms(data);
+                            $scope.rooms = rooms;
+                            $scope.refresh();
                             console.log('success', data, status, headers(), config);
                         }).
                         error(function (data, status, headers, config) {
                             console.log('error', data, status, headers(), config);
-                            var data = roomService.getRemoteDataTest();
-                            var rooms = roomService.updateRooms(data);
-                            $scope.rooms = rooms;
-                            $scope.refresh();
+                            //var data = roomService.getRemoteDataTest();
+                            //var rooms = roomService.updateRooms(data);
+                            //$scope.rooms = rooms;
+                            //$scope.refresh();
                         });
                 };
 
