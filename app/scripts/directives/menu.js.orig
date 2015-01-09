@@ -13,7 +13,7 @@ angular.module('roomFinderApp')
       restrict: 'EA',
       link: function postLink($scope) {
         $scope.findRooms = function() {
-          //console.log('findRooms...', $scope);
+          console.log('findRooms...', $scope);
 
           $http.get('http://api/rooms/get', {
             params: {
@@ -26,13 +26,18 @@ angular.module('roomFinderApp')
             console.log('success', data, status, headers(), config);
           }).
           error(function(data, status, headers, config) {
+<<<<<<< HEAD
             console.log('error', data, status, headers(), config);
                 var data = roomService.getRemoteDataTest();
-                var rooms = roomService.updateRooms(data);
-                  $scope.rooms = rooms;
-                  $scope.refresh();
-                  //$scope.rooms = rooms;
+                var rooms = roomService.updateRoomsTest(data);
 
+                $scope.$apply(function()
+                {
+                    $scope.rooms = rooms;
+                });
+=======
+              console.log('error', data, status, headers(), config);
+>>>>>>> master
           });
         };
 

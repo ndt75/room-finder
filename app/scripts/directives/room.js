@@ -5,31 +5,41 @@ angular.module('roomFinderApp').directive('room', function () {
         replace: true,
         transclude: false,
         restrict: 'A',
-        link: function (scope, element, attrs) {
+        scope: {
+            'params' : '='
+        },
+        link: function (scope, element) {
+            var room = scope.params;
             var shape = $(element);
-            var data = JSON.parse(attrs.params);
 
-            var content =
-            '<ul class="details">' +
-            '<li><label>Available:</label><span>' + scope.hasAttribute(data.available) +'</span></li>' +
-            '<li><label>People:</label><span>' + data.people +'</span></li>' +
-            '<li><label>Video</label><span>' + scope.hasAttribute(data.video) +'</span></li>' +
-            '<li><label>White Board</label><span>' + scope.hasAttribute(data.whiteboard) +'</span></li>' +
-            '</ul>';
+            function drawShape(room) {
+                //console.log('room', room)
+                //debugger;
 
-            var options = {
-                trigger: 'hover',
-                delay: { show: 100, hide: 120},
-                content: content,
-                placement: 'left',
-                html: true,
-                title: data.name
-            };
+                var content =
+                '<h5>' + room.displayName + '</h5>' +
+                '<ul class="details">' +
+                '<li><label>Available:</label><span>' + room.hasAttribute(room.available) +'</span></li>' +
+                '<li><label>People:</label><span>' + room.people +'</span></li>' +
+                '<li><label>Video</label><span>' + room.hasAttribute(room.video) +'</span></li>' +
+                '<li><label>White Board</label><span>' + room.hasAttribute(room.whiteboard) +'</span></li>' +
+                '</ul>';
 
-            shape.popover(options);
+                shape.qtip({
+                    content: content
+                });
 
-        	var fill = (data.available) ? '#EDE6CE' : '#F15A22';
-            shape.css('fill', fill);
+                var fill = (room.available) ? '#EDE6CE' : '#F15A22';
+                shape.css('fill', fill);
+            }
+
+            drawShape(room);
+
+            scope.$watch('params', function(newVal, oldVal) {
+                if (newVal.available !== oldVal.available) {
+                    drawShape(newVal);
+                }
+            });
         }
     };
 
