@@ -54,10 +54,18 @@ class Room
     name
   end
 
-  def get_availability(email)
-    Rails.logger.info "searching dates: sd = #{@start_date} edate = #{@end_date}"
+  def get_date_str_ews(date)
+    date.strftime('%Y-%m-%dT%H:%M:00')
+  end
 
-    opts = {:start_time => @start_date, :end_time => (@end_date), :requested_view => :free_busy_merged }
+  def get_availability(email)
+    #start = @start_date.in_time_zone("Pacific Time (US & Canada)")
+    #endt = @end_date.in_time_zone("Pacific Time (US & Canada)")
+    start = get_date_str_ews(@start_date)
+    endt = get_date_str_ews(@end_date)
+    Rails.logger.info "searching dates: sd = #{start} edate = #{endt}"
+
+    opts = {:start_time => start, :end_time => endt, :requested_view => :free_busy, :time_zone => {}}
     avail = @ews.get_user_availability([email], opts)
 
     avail_data = avail.get_user_availability_response

@@ -13,12 +13,12 @@
             </p>
         </div>
         <div class="dropdown timePicker control">
-            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+            <button class="btn btn-success dropdown-toggle" type="button" id="startTimeButton" data-toggle="dropdown"
                     aria-expanded="false">
-                Start Time
+                <span id="startTimeText">Start Time</span>
                 <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="startTimeButton">
                 <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="setStartTime('8:00 am')">8:00 am</a>
                 </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="setStartTime('8:30 am')">8:30 am</a>
@@ -60,12 +60,12 @@
             </ul>
         </div>
         <div class="dropdown timePicker control">
-            <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+            <button class="btn btn-danger dropdown-toggle" type="button" id="endTimeButton" data-toggle="dropdown"
                     aria-expanded="false">
-                End Time
+                <span id="endTimeText">End Time</span>  
                 <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="endTimeButton">
                 <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="setEndTime('8:00 am')">8:00 am</a>
                 </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="setEndTime('8:30 am')">8:30 am</a>
@@ -106,7 +106,7 @@
                 </li>
             </ul>
         </div>
-        <div class="go control" style="float: right; margin-right: 100px; margin-top:-30px;">
+        <div class="go control" style="float: right; margin-right: 110px; margin-top:-30px;">
             <button type="button" class="btn btn-info btn-lg" ng-click="findRooms()" style="font-size: xx-large">
                 Search
             </button>
@@ -117,15 +117,15 @@
         <div class="control">
             <div class="btn-toolbar" role="toolbar">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-success" aria-label="Left Align"><span
+                    <button type="button" class="btn" aria-label="Left Align"><span
                             class="glyphicon glyphicon-user" aria-hidden="true"
                             ng-click="setCapacity(1,4)">&nbsp;1-4</span>
                     </button>
-                    <button type="button" class="btn btn-success" aria-label="Center Align"><span
+                    <button type="button" class="btn" aria-label="Center Align"><span
                             class="glyphicon glyphicon-user" aria-hidden="true"
                             ng-click="setCapacity(5,8)">&nbsp;5-8</span>
                     </button>
-                    <button type="button" class="btn btn-success" aria-label="Right Align"><span
+                    <button type="button" class="btn" aria-label="Right Align"><span
                             class="glyphicon glyphicon-user" aria-hidden="true"
                             ng-click="setCapacity(9,20)">&nbsp;9-20</span>
                     </button>
@@ -133,7 +133,7 @@
             </div>
         </div>
         <div class="input-group control">
-            <div class="input-group">
+            <div class="input-group whiteboard">
                 <span class="input-group-addon">
                     <input type="checkbox" aria-label="..." ng-model="hasWhiteBoard">
                 </span>
@@ -141,12 +141,17 @@
             </div>
         </div>
         <div class="input-group control">
-            <div class="input-group">
+            <div class="input-group video">
                 <span class="input-group-addon">
                     <input type="checkbox" aria-label="..." ng-model="hasVideo">
                 </span>
                 <label class="form-control glyphicon glyphicon-facetime-video" aria-label="...">&nbsp;Video</label>
             </div>
+        </div>
+        <div class="go control" style="float: right; margin-right: 100px; margin-top:-30px;">
+            <button type="button" class="btn btn-danger btn-lg"  ng-click="findRooms()" style="font-size: xx-large">
+                Book It!
+            </button>
         </div>
     </section>
 </form>
