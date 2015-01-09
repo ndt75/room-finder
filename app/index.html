@@ -24,15 +24,23 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li ng-class="{active: locationSelected == 'sj7' || !locationSelected}"><a ng-href="#/sj7" ng-click="locationSelected='sj7'">7th Floor</a></li>
-          <li ng-class="{active: locationSelected == 'sj8'}"><a ng-href="#/sj8" ng-click="locationSelected='sj8'">8th Floor</a></li>
-        </ul>
+        <!--<ul class="nav nav-pills pull-right">-->
+          <!--<li ng-class="{active: locationSelected == 'sj7' || !locationSelected}"><a ng-href="#/sj7" ng-click="locationSelected='sj7'">7th Floor</a></li>-->
+          <!--<li ng-class="{active: locationSelected == 'sj8'}"><a ng-href="#/sj8" ng-click="locationSelected='sj8'">8th Floor</a></li>-->
+        <!--</ul>-->
         <header class="banner">
           <img src="images/banner.png" />
         </header>
       </div>
-
+      <h1 class="section" style="margin-left: 40px">Rooms Available</h1>
+      <section id="gottaHave" style="margin-left: 40px">
+        <div class="control">
+          <ul class="nav nav-pills pull-right">
+            <li ng-class="{active: locationSelected == 'sj7' || !locationSelected}"><a ng-href="#/sj7" ng-click="locationSelected='sj7'">7th Floor</a></li>
+            <li ng-class="{active: locationSelected == 'sj8'}"><a ng-href="#/sj8" ng-click="locationSelected='sj8'">8th Floor</a></li>
+          </ul>
+        </div>
+      </section>
       <div ng-view=""></div>
 
       <div class="footer">
