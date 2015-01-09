@@ -60,7 +60,7 @@ class Room
 
     avail_data = avail.get_user_availability_response
   
-
+    Rails.logger.info "******AVIAL_DATA full = #{avail_data}"
     free_busy_data = avail_data[1][:free_busy_view][:elems]
 
     cal_data = free_busy_data.find do |data| 
@@ -68,7 +68,7 @@ class Room
     end
 
     is_busy = false
-
+    Rails.logger.info "******CAL_DATA = #{cal_data}"
     if cal_data
       busy_data = cal_data[:calendar_event_array][:elems][0][:calendar_event][:elems].find do |data| 
         data.has_key? :busy_type 
@@ -80,7 +80,7 @@ class Room
       end
     end
 
-    puts "#{email} is busy?  #{is_busy}"
+    Rails.logger.info "#{email} is busy?  #{is_busy}"
 
     is_busy
   end
