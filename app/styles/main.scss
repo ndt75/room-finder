@@ -157,3 +157,35 @@ body {
 .details li span {
   margin-left: 5px;
 }
+
+/* Redesign */
+.banner
+{
+  text-align: center;
+}
+
+.control
+{
+  padding-left: 20px;
+  float: left;
+}
+
+.timePicker, .datePicker, .go
+{
+  display: inline-block;
+}
+
+.datePicker
+{
+  width: 20%;
+}
+
+#gottaHave
+{
+  height: 50px;
+}
+
+#when
+{
+  height: 50px;
+}
