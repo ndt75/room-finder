@@ -55,7 +55,7 @@ class Room
   end
 
   def get_date_str_ews(date)
-    date.strftime('%Y-%m-%dT%H:%M:00')
+    date.utc.strftime('%Y-%m-%dT%H:%M:00')
   end
 
   def get_availability(email)
