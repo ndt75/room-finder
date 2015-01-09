@@ -55,6 +55,8 @@ class Room
   end
 
   def get_availability(email)
+    Rails.logger.info "searching dates: sd = #{@start_date} edate = #{@end_date}"
+
     opts = {:start_time => @start_date, :end_time => (@end_date), :requested_view => :free_busy_merged }
     avail = @ews.get_user_availability([email], opts)
 
