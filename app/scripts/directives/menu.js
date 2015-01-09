@@ -27,7 +27,7 @@ angular.module('roomFinderApp')
                 $scope.findRooms = function () {
                     //console.log('findRooms...', $scope);
 
-                    $http.get('http://csdipchack02.sites.homestore.net/api/rooms/get', {
+                    $http.get('http://bookit/rooms/get', {
                         params: {
                             date: new Date($scope.date).toLocaleDateString(),
                             stime: $scope.startTime,
@@ -35,6 +35,17 @@ angular.module('roomFinderApp')
                         }
                     }).
                         success(function (data, status, headers, config) {
+                            _.forEach(data.rooms, function(r) {
+                                //debugger;
+                                if (($scope.hasVideo && !r.video) ||
+                                    ($scope.hasWhiteBoard && !r.whiteboard) ||
+                                    ($scope.minCapacity && r.people < $scope.minCapacity) ||
+                                    ($scope.maxCapacity && r.people > $scope.maxCapacity)) {
+                                    r.available = false;
+                                    console.log('roommmmm', r);
+                                }
+                            })
+
                             var rooms = roomService.updateRooms(data);
                             $scope.rooms = rooms;
                             $scope.refresh();
@@ -42,10 +53,39 @@ angular.module('roomFinderApp')
                         }).
                         error(function (data, status, headers, config) {
                             console.log('error', data, status, headers(), config);
-                            //var data = roomService.getRemoteDataTest();
-                            //var rooms = roomService.updateRooms(data);
-                            //$scope.rooms = rooms;
-                            //$scope.refresh();
+                            var data = roomService.getRemoteDataTest();
+
+                            /*
+                            var filterOptions = {};
+
+                            if ($scope.hasVideo) {
+                                filterOptions.video = $scope.hasVideo;
+                            }
+
+                            if ($scope.hasWhiteBoard) {
+                                filterOptions.whiteboard = $scope.hasWhiteBoard;
+                            }
+
+                            if (!_.isEmpty(filterOptions)) {
+                                data.rooms = _.filter(data.rooms, filterOptions);
+                            }
+                            */
+
+                            //debugger;
+                            _.forEach(data.rooms, function(r) {
+                                //debugger;
+                                if (($scope.hasVideo && !r.video) ||
+                                    ($scope.hasWhiteBoard && !r.whiteboard) ||
+                                    ($scope.minCapacity && r.people < $scope.minCapacity) ||
+                                    ($scope.maxCapacity && r.people > $scope.maxCapacity)) {
+                                    r.available = false;
+                                    console.log('roommmmm', r);
+                                }
+                            })
+
+                            var rooms = roomService.updateRooms(data);
+                            $scope.rooms = rooms;
+                            $scope.refresh();
                         });
                 };
 
