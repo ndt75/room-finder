@@ -62,7 +62,7 @@
         <div class="dropdown timePicker control">
             <button class="btn btn-danger dropdown-toggle" type="button" id="endTimeButton" data-toggle="dropdown"
                     aria-expanded="false">
-                <span id="endTimeText">End Time</span>
+                <span id="endTimeText">End Time</span>  
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="endTimeButton">
@@ -106,7 +106,7 @@
                 </li>
             </ul>
         </div>
-        <div class="go control" style="float: right; margin-right: 100px; margin-top:-30px;">
+        <div class="go control" style="float: right; margin-right: 110px; margin-top:-30px;">
             <button type="button" class="btn btn-info btn-lg" ng-click="findRooms()" style="font-size: xx-large">
                 Search
             </button>
@@ -117,15 +117,15 @@
         <div class="control">
             <div class="btn-toolbar" role="toolbar">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-success" aria-label="Left Align"><span
+                    <button type="button" class="btn" aria-label="Left Align"><span
                             class="glyphicon glyphicon-user" aria-hidden="true"
                             ng-click="setCapacity(1,4)">&nbsp;1-4</span>
                     </button>
-                    <button type="button" class="btn btn-success" aria-label="Center Align"><span
+                    <button type="button" class="btn" aria-label="Center Align"><span
                             class="glyphicon glyphicon-user" aria-hidden="true"
                             ng-click="setCapacity(5,8)">&nbsp;5-8</span>
                     </button>
-                    <button type="button" class="btn btn-success" aria-label="Right Align"><span
+                    <button type="button" class="btn" aria-label="Right Align"><span
                             class="glyphicon glyphicon-user" aria-hidden="true"
                             ng-click="setCapacity(9,20)">&nbsp;9-20</span>
                     </button>
@@ -147,6 +147,11 @@
                 </span>
                 <label class="form-control glyphicon glyphicon-facetime-video" aria-label="...">&nbsp;Video</label>
             </div>
+        </div>
+        <div class="go control" style="float: right; margin-right: 100px; margin-top:-30px;">
+            <button type="button" class="btn btn-danger btn-lg"  ng-click="findRooms()" style="font-size: xx-large">
+                Book It!
+            </button>
         </div>
     </section>
 </form>

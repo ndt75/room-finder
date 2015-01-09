@@ -165,7 +165,7 @@ body {
   margin: 10px auto;
   background-color: #34485e;
   font-size: 47px;
-  font-family: 'Futura Condensed';
+  font-family: 'Futura';
   color: #FFFFFF;
   text-align: center;
 }
@@ -187,6 +187,18 @@ body {
   height: 50px;
 }
 
+#gottaHave .btn-group button
+{
+  padding: 0 !important;
+  margin-right: 2.6px;
+}
+
+#gottaHave .btn-group span
+{
+  width: 72px;
+  line-height: 2.29;
+}
+
 #gottaHave label {
   display: inline-block;
   top: 0;
@@ -198,7 +210,7 @@ body {
 
 .section {
   color: #35485e;
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica';
   font-size: 24px;
   font-weight: bold;
 }
