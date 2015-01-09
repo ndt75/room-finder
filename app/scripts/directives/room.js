@@ -17,7 +17,6 @@ angular.module('roomFinderApp').directive('room', function () {
                 //debugger;
 
                 var content =
-                '<h5>' + room.displayName + '</h5>' +
                 '<ul class="details">' +
                 '<li><label>Available:</label><span>' + room.hasAttribute(room.available) +'</span></li>' +
                 '<li><label>People:</label><span>' + room.people +'</span></li>' +
@@ -26,7 +25,12 @@ angular.module('roomFinderApp').directive('room', function () {
                 '</ul>';
 
                 shape.qtip({
-                    content: content
+                    content:
+                    {
+                        text: content,
+                        title: room.displayName
+                    },
+                    style: 'qtip-bootstrap'
                 });
 
                 var fill = (room.available) ? '#EDE6CE' : '#F15A22';

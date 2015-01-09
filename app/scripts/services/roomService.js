@@ -130,6 +130,7 @@ var testOffice = new Office('Test');
 //office.addRoom(new Room('loft', false, 4, true, true, 'sanjoseloft@move.com'));
 ////office.addRoom(new Room('arena', false, 4, true, true));
 
+//8th Floor
 office.addRoom(new Room('penthouse', false, 4, true, true, 'sanjosepenthouse@move.com'));
 office.addRoom(new Room('bungalow', false, 4, true, true, 'sanjosebungalow@move.com'));
 office.addRoom(new Room('houseboat', false, 4, true, 'CampbellTheHouseboat@move.com'));
