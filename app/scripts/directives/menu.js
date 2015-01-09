@@ -24,6 +24,8 @@ angular.module('roomFinderApp')
                 $scope.setCapacity = function (min, max) {
                     $scope.minCapacity = min;
                     $scope.maxCapacity = max;
+                    console.log("min: " + $scope.minCapacity);
+                    console.log("max: " + $scope.maxCapacity);
                 }
 
                 $scope.findRooms = function () {
