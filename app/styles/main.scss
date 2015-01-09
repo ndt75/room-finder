@@ -159,47 +159,56 @@ body {
 }
 
 /* Redesign */
-.banner
-{
-//  text-align: center;
+.banner {
+  //  text-align: center;
   border-radius: 10px;
   margin: 10px auto;
   background-color: #34485e;
-  font-size: 47px ;
+  font-size: 47px;
   font-family: 'Futura Condensed';
   color: #FFFFFF;
   text-align: center;
 }
 
-.control
-{
+.control {
   padding-left: 20px;
   float: left;
 }
 
-.timePicker, .datePicker, .go
-{
+.timePicker, .datePicker, .go {
   display: inline-block;
 }
 
-.datePicker
-{
+.datePicker {
   width: 20%;
 }
 
-#gottaHave
-{
+#gottaHave {
   height: 50px;
 }
 
-#when
-{
+#gottaHave label {
+  display: inline-block;
+  top: 0;
+}
+
+#when {
   height: 50px;
 }
-.section
-{
-    color: #35485e;
-    font-family: 'Helvetica Neue';
-    font-size: 24px;
-    font-weight: bold;
+
+.section {
+  color: #35485e;
+  font-family: 'Helvetica Neue';
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.whiteboard span, .whiteboard label {
+  background-color: #f39c22;
+  color: #ffffff;
+}
+
+.video span, .video label {
+  background-color: #e75900;
+  color: #ffffff;
 }
