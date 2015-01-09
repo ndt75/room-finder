@@ -13,7 +13,7 @@ angular.module('roomFinderApp')
       restrict: 'EA',
       link: function postLink($scope) {
         $scope.findRooms = function() {
-          console.log('findRooms...', $scope);
+          //console.log('findRooms...', $scope);
 
           $http.get('http://api/rooms/get', {
             params: {
