@@ -68,7 +68,7 @@ class Room
     end
 
     is_busy = false
-
+    Rails.logger.info "******CAL_DATA = #{cal_data}"
     if cal_data
       busy_data = cal_data[:calendar_event_array][:elems][0][:calendar_event][:elems].find do |data| 
         data.has_key? :busy_type 
@@ -80,7 +80,7 @@ class Room
       end
     end
 
-    puts "#{email} is busy?  #{is_busy}"
+    Rails.logger.info "#{email} is busy?  #{is_busy}"
 
     is_busy
   end
