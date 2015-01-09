@@ -157,3 +157,49 @@ body {
 .details li span {
   margin-left: 5px;
 }
+
+/* Redesign */
+.banner
+{
+//  text-align: center;
+  border-radius: 10px;
+  margin: 10px auto;
+  background-color: #34485e;
+  font-size: 47px ;
+  font-family: 'Futura Condensed';
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.control
+{
+  padding-left: 20px;
+  float: left;
+}
+
+.timePicker, .datePicker, .go
+{
+  display: inline-block;
+}
+
+.datePicker
+{
+  width: 20%;
+}
+
+#gottaHave
+{
+  height: 50px;
+}
+
+#when
+{
+  height: 50px;
+}
+.section
+{
+    color: #35485e;
+    font-family: 'Helvetica Neue';
+    font-size: 24px;
+    font-weight: bold;
+}
