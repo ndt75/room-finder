@@ -14,9 +14,11 @@ angular.module('roomFinderApp')
             link: function postLink($scope) {
                 $scope.setStartTime = function (time) {
                     $scope.startTime = time;
+                    $('#startTimeText').html(time);
                 }
                 $scope.setEndTime = function (time) {
                     $scope.endTime = time;
+                    $('#endTimeText').html(time);
                 }
 
                 $scope.setCapacity = function (min, max) {
